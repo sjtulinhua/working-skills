@@ -11,6 +11,7 @@ This skill assists in building comprehensive Product Requirement Documents (PRDs
 ## Core Workflow
 Follow the stages in the professional workflow defined in [references/workflow.md](references/workflow.md):
 
+0. **Context Initialization**: Establish project background, business goals, and determine context storage strategy (Global vs Single).
 1. **Idea Discovery**: Dig deep with 3-5 strategic questions.
 2. **Scope & Priority**: Define P0/P1/P2 features.
 3. **Logic Details**: Clarify business rules and dependencies.

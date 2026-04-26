@@ -1,10 +1,8 @@
-
-
 Status In progress
 
 # Experience name
 
-Product manager [Hua Lin](mailto:linhua@motorola.com)
+Product manager 
 
 Engineer 
 
@@ -12,9 +10,13 @@ UX designer
 
 # **Introduction**
 
-## **Purpose**
+## **Background**
 
-Purpose
+Background of the project, user pain points, and why this is being built.
+
+## **Objectives**
+
+What this project aims to achieve and the key success metrics (e.g., business goals, user value).
 
 ## **Limitation**
 

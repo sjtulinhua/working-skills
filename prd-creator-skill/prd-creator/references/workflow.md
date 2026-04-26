@@ -2,6 +2,16 @@
 
 This skill adopts a "progressive disclosure" guided design.
 
+## Stage 0: Context Initialization
+- **Goal**: Establish the project background and business objectives before defining features.
+- **Action**:
+  1. Ask the user for a brief description of the project's background and goals.
+  2. **Progressive Q&A**: Ask targeted questions to fill in missing context (e.g., target audience, business metrics, system constraints, user pain points).
+  3. **Context Distillation**: Summarize the gathered information into a professional "Project Background" and "Objectives" (including success metrics).
+  4. **Storage Strategy**: Ask the user if this is a large, multi-PRD project or a single-PRD project.
+     - If large: Suggest saving this context as a standalone `Global_Context.md` for future PRDs.
+     - If single: Inform the user it will be included directly in the PRD's Introduction section.
+
 ## Stage 1: Idea Discovery
 - **Goal**: Understand the user's core requirements.
 - **Action**: Ask 3-5 strategic questions based on the user's idea.
@@ -26,7 +36,6 @@ This skill adopts a "progressive disclosure" guided design.
   1. **Naming Suggestion**: Propose a professional filename based on the project (e.g., `PRD_[ProjectName]_V1.md`). Ask: "I suggest naming the document '[Suggested Name]'. Do you accept this, or would you like to provide a different name?"
   2. **File Generation**: Once the name is confirmed, accurately fill in the `references/PRD Template.md`. Ensure the PRD content is in **English**.
   3. **Local Save (Markdown)**: Use `write_file` to save the content using the confirmed name.
-  4. **Local Sync (Word)**: If a `docx` or similar skill is available, generate the corresponding `.docx` file in the workspace.
 - **Completion**: Present the final file paths to the user.
 
 ## Important Notes
