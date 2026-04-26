@@ -7,28 +7,39 @@ A professional agent skill to facilitate the creation of high-quality Product Re
 - **Progressive Deep Dive**: Dynamically asks for Triggers, Pre-conditions, and User Journeys when needed.
 - **Multilingual Support**: Discuss in Chinese or English; output always in professional English.
 - **Visualizations**: Optional Mermaid.js flowchart generation.
-- **Multi-format Export**: Generates both `.md` and `.docx` (Microsoft Word) files locally.
+- **Markdown Export**: Generates structured `.md` files locally with standard templates.
 
 ## Installation
 
 ### Prerequisites
 - [Gemini CLI](https://github.com/google/gemini-cli) installed and configured.
 
-### Steps
-1. Download the `prd-creator.skill` file from this repository.
-2. Open your terminal in your workspace directory.
-3. Run the installation command:
+### Option 1: Global Installation (Recommended)
+To use this skill across all your projects:
+1. Download the `prd-creator.skill` file.
+2. Run the installation command:
    ```bash
-   gemini skills install prd-creator.skill --scope workspace
+   gemini skills install prd-creator.skill
    ```
-4. Reload your skills in the active Gemini session:
-   ```bash
-   /skills reload
-   ```
+
+### Option 2: Workspace Installation
+To limit this skill to the current project directory only:
+```bash
+gemini skills install prd-creator.skill --scope workspace
+```
+
+### Option 3: Developer Mode (Link from Source)
+If you are developing or customizing the skill, link directly to the source folder:
+```bash
+gemini skills link ./prd-creator-skill/prd-creator
+```
 
 ## How to Use
 
-Simply trigger the skill by mentioning "PRD" or "Product Requirement" in your prompt.
+Simply trigger the skill by mentioning "PRD" or "Product Requirement" in your prompt, or activate it manually:
+```bash
+/skills activate prd-creator
+```
 
 **Example Prompts:**
 - "Help me write a PRD for a new smart watch sync feature."
