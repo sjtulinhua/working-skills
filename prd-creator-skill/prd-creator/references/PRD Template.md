@@ -1,74 +1,58 @@
-Status In progress
+Status: Draft / In Review
 
-# Experience name
+# [Project Name]
 
-Product manager 
-
-Engineer 
-
-UX designer 
+Product Manager: 
+Engineer: 
+UX Designer: 
 
 # **Introduction**
 
-## **Background**
+## **Project Background**
+Detailed background of the project, user pain points, and the core problem being solved.
 
-Background of the project, user pain points, and why this is being built.
+## **Strategic Objectives**
+Primary goals and key success metrics (KPIs/Business Value).
 
-## **Objectives**
-
-What this project aims to achieve and the key success metrics (e.g., business goals, user value).
-
-## **Limitation**
-
-Limitation.
+## **Constraints & Assumptions**
+Technical, business, or resource limitations and established assumptions.
 
 # **Functional Requirements**
 
-## **Priority**
+## **Feature Scope & Prioritization**
+Priorities: P0 = Critical/Must-have, P1 = Important/Should-have, P2 = Optional/Nice-to-have.
 
-Indicate priorities (P0 \= Must-have, P1 \= Should-have, and P2 \= Nice-to-have) 
+| Priority | Feature ID | Requirement Summary |
+| :--- | :--- | :--- |
+| P0 | R1 | ... |
+| P1 | R2 | ... |
 
-| Priority | Detailed description |
-| :---- | :---- |
-| P0 | R1 |
-| P1 | R3  |
+## **R1. [Requirement Title]**
 
-## **R1. Requirement**
+### **R1.1. Feature Name**
+**Detailed Description**: ...
+**Interaction Feedback Strategy**: (e.g., Notification logic, UI feedback)
+**Triggers & Pre-conditions**: ...
+**Success Criteria (Exit Criteria)**: ...
 
-### **R1.1. Feature**
-
-Feature description
-
-### **R1.2. Distance & RSSI level between watch and phone**
-
-Feature description
-
-**R1.2.1.** Feature description
-
-## **R2. Requirement**
-
-### **R2.1. Feature**
+## **R2. [Requirement Title]**
+...
 
 # **Non-functional Requirements**
 
-## **System Requirement**
+## **System Architecture & Requirements**
+Detailed technical environment or architectural constraints.
 
-1\. Description
+## **Security & Privacy**
+Authentication, data protection, and compliance features.
 
-## **Security**
-
-List any authentication, data protection, and any other security-related features
-
-## **Performance**
-
-Speed, battery life, responsiveness, and any other performance-related statistics
+## **Performance & Scalability**
+Latency, battery impact, throughput, and responsiveness targets.
 
 # **Dependencies**
 
-## **Internal**
+## **Internal Dependencies**
+Systems or internal teams this project relies on.
 
-To be identified (Systems, or components this project relies on)
-
-## **External**
-
-None
+## **External Dependencies**
+Third-party APIs, vendor services, or external platforms.

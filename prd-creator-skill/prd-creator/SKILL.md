@@ -11,26 +11,31 @@ This skill assists in building comprehensive Product Requirement Documents (PRDs
 ## Core Workflow
 Follow the stages in the professional workflow defined in [references/workflow.md](references/workflow.md):
 
-0. **Context Initialization**: Establish project background, business goals, and determine context storage strategy (Global vs Single).
-1. **Idea Discovery**: Dig deep with 3-5 strategic questions.
+0. **Context Initialization**: Establish project background and storage strategy (`Global_Context.md` vs Single PRD). **MANDATORY**: User must confirm context distillation before proceeding.
+1. **Idea Discovery**: Dig deep with 3-5 strategic questions. Strictly separate "Discovery" from "Logic Deep Dive".
 2. **Scope & Priority**: Define P0/P1/P2 features.
-3. **Logic Details**: Clarify business rules and dependencies.
+3. **Logic Details**: Clarify business rules and dependencies. Includes a "Controlled Brainstorming" sub-phase for specific features.
 4. **Final Output**: Generate the document using the standard [references/PRD Template.md](references/PRD Template.md).
+
+## Execution & Control Policy (CRITICAL)
+- **Workflow Status Checklist**: EVERY response MUST include a `[Workflow Status]` checklist (e.g., `[v] Stage 0 [ ] Stage 1 ...`) to prevent "auto-pilot".
+- **Hard-Gate Confirmation**: AI MUST wait for explicit user confirmation that the current point is resolved before proposing the next. Do NOT skip confirmation gates for stage transitions.
+- **Workflow Pacing**: Maintain consistency with previous context. Do not provide varying or fragmented discussion points in different turns.
+- **Zero-Tolerance for Pollution**: Strictly separate "Idea Discovery" from "Logic Deep Dive" to prevent context pollution.
 
 ## Language & Output Policy
 - **Interaction (CRITICAL)**: 
-  - AI MUST follow the user's language preference for the discussion. 
-  - If the user interacts in Chinese, the entire discovery and logic clarification process MUST be conducted in Chinese.
-- **Final PRD Language**: The final generated PRD (both Markdown and Word) **MUST be in English** regardless of the interaction language.
-- **Visualizations (Optional)**: If the user requests a visual representation of a journey or logic, use **Mermaid.js** syntax within the Markdown. ALWAYS ask the user for confirmation before generating a flowchart.
-- **Output & Integration (CRITICAL)**: 
-  1. **Filename Confirmation**: Before saving the file, suggest a professional name (e.g., `PRD_[ProjectName].md`) and ask the user to confirm.
-  2. **Local Markdown**: After name confirmation, save the final PRD as a `.md` file using the `write_file` tool.
-  3. **Visualizations Inclusion**: If the user has confirmed any Mermaid diagrams or visual logic during the process, **YOU MUST** include the full Mermaid code blocks in the relevant sections of the final `.md` file. Do NOT omit them.
-- **Template Strictness (CRITICAL)**: 
-  1. **Zero Omission**: The final PRD MUST contain ALL sections defined in the template. Do NOT remove any headers (e.g., "Non-functional Requirements", "Dependencies") even if no content is currently available. Mark them as "None" or "To be identified".
-  2. **Format Fidelity**: Keep the exact table structures (e.g., Priority table) and Markdown header levels (H1, H2, H3) as specified in the template.
-  3. **Metadata**: Ensure the "Product manager" field is correctly filled based on user input or left empty if not provided.
+  - AI MUST follow the user's language preference for the discussion (e.g., Chinese for discovery).
+- **Final PRD Language**: The final generated PRD **MUST be in English**.
+- **File Management**: 
+  - **MANDATORY**: All generated files (.md, .docx, etc.) MUST be stored within the workspace directory. NEVER use system/temp folders.
+  - **Filename Confirmation**: Propose a professional name (e.g., `PRD_[ProjectName].md`) and get user confirmation before saving.
+- **Terminology & Clarity**: Use professional engineering-standard terminology. Avoid vague phrasing (e.g., use "Interaction Feedback Strategy" instead of "Feedback Balance").
+- **Visualizations (Optional)**: Use **Mermaid.js**. ALWAYS ask for confirmation before generating.
+
+## Template Strictness (CRITICAL)
+1. **Zero Omission**: Keep ALL template sections. Mark as "None" if empty.
+2. **Format Fidelity**: Maintain exact table structures and header levels.
 
 ## Resources (Relative to skill directory)
 - `references/PRD Template.md`: The official standard template for final output.
