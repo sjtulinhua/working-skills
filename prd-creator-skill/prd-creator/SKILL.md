@@ -20,8 +20,13 @@ Follow the stages in the professional workflow defined in [references/workflow.m
 ## Execution & Control Policy (CRITICAL)
 - **Workflow Status Checklist**: EVERY response MUST include a `[Workflow Status]` checklist (e.g., `[v] Stage 0 [ ] Stage 1 ...`) to prevent "auto-pilot".
 - **Hard-Gate Confirmation**: AI MUST wait for explicit user confirmation that the current point is resolved before proposing the next. Do NOT skip confirmation gates for stage transitions.
-- **Workflow Pacing**: Maintain consistency with previous context. Do not provide varying or fragmented discussion points in different turns.
+- **Strict Phase Control**: Do NOT assume a phase is complete until the user explicitly says "Phase Complete" or "Move to next feature".
+- **Workflow Pacing**: Maintain consistency with previous context. Proposing the next feature before the current PRD is fully polished is a violation of policy.
 - **Zero-Tolerance for Pollution**: Strictly separate "Idea Discovery" from "Logic Deep Dive" to prevent context pollution.
+
+## Quality & Formatting Rigor (CRITICAL)
+- **Anti-Formatting Decay**: Fields like `Interaction Feedback Strategy`, `Triggers & Pre-conditions`, and `Success Criteria` MUST always use multi-line lists or bullet points. NEVER bunch them into a single paragraph.
+- **Visual Component Persistence**: Mermaid diagrams, flowcharts, or wireframe references approved in earlier stages MUST be carried forward into ALL subsequent PRD versions. A document update should never result in the removal of previously confirmed visualizations.
 
 ## Language & Output Policy
 - **Interaction (CRITICAL)**: 
@@ -30,7 +35,7 @@ Follow the stages in the professional workflow defined in [references/workflow.m
 - **File Management**: 
   - **MANDATORY**: All generated files (.md, .docx, etc.) MUST be stored within the workspace directory. NEVER use system/temp folders.
   - **Filename Confirmation**: Propose a professional name (e.g., `PRD_[ProjectName].md`) and get user confirmation before saving.
-- **Terminology & Clarity**: Use professional engineering-standard terminology. Avoid vague phrasing (e.g., use "Interaction Feedback Strategy" instead of "Feedback Balance").
+- **Terminology & Clarity**: Use professional engineering-standard terminology. Avoid vague phrasing or redundant qualifiers (e.g., do not use "Success Criteria (Exit Criteria)").
 - **Visualizations (Optional)**: Use **Mermaid.js**. ALWAYS ask for confirmation before generating.
 
 ## Template Strictness (CRITICAL)
