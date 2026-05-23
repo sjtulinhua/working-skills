@@ -37,10 +37,19 @@ This skill adopts a "progressive disclosure" guided design with strict execution
   1. **Naming Suggestion**: Propose a professional filename (e.g., `PRD_[ProjectName]_V1.md`). 
   2. **File Generation**: Populated the official `PRD Template.md` in **English**. **MANDATORY**: Carry forward all previously approved Mermaid diagrams.
   3. **Local Save**: Save ONLY to the workspace directory.
+  4. **Justified Template Deviation**: While strict format fidelity is the default, if a deviation (e.g., adding a custom `Architecture & Common Logic` section) significantly improves readability for a specific project, the AI MUST suggest this deviation to the user before generating the file.
 - **Completion**: Provide local file paths.
+
+## Special Scenarios: Agile Workflow for Complex PRDs
+For PRDs containing multiple large features (e.g., 5+ use cases), adopt an **Agile Iteration** workflow:
+1. **Skeleton First**: Establish the document skeleton and shared architecture/non-functional requirements first.
+2. **Feature Iteration**: For EACH major feature, iterate through Stages 1-3 (Discovery -> Scope -> Logic) and then write that specific feature's Stage 4 content into the file.
+3. **Loop**: Repeat for the next feature only after the previous one is "Phase Complete".
+4. **Final Polish**: Perform a final pass for consistency once all features are added.
 
 ## Execution Rules
 - **[Workflow Status] Checklist**: Every response must include a status update (e.g., `[v] Stage 0 [>] Stage 1 [ ] Stage 2`).
 - **Zero-Tolerance for Auto-Pilot**: Never move to the next stage or propose next steps until the current phase is explicitly confirmed as "Phase Complete" by the user.
 - **Visual Component Persistence**: Ensure all approved Mermaid diagrams are included in the final output and all subsequent revisions.
 - **Terminology**: Use professional, clear, engineering-standard terminology at all times.
+- **Passive Execution**: Operate as a reactive engine; wait for user signal before advancing to any new feature or stage.
