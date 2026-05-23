@@ -1,55 +1,52 @@
-# PRD Creation Workflow
+# Full PRD Creation Workflow
 
-This skill adopts a "progressive disclosure" guided design with strict execution gates.
+Use this workflow ONLY when the Working Mode is "Full PRD Creation".
 
 ## Stage 0: Context Initialization
-- **Goal**: Establish the project background and business objectives before defining features.
-- **Action**:
-  1. **Detection**: Check if a `Global_Context.md` already exists in the workspace.
-  2. **Storage Strategy Selection**: Ask the user: "Is this a **Single PRD** project, or part of a **Large/Multi-PRD** project?"
-     - If Multi-PRD: Propose creating/updating `Global_Context.md`.
-  3. **Context Gathering**: Ask targeted questions (target audience, business metrics, system constraints, user pain points).
-  4. **MANDATORY Context Distillation**: Summarize findings into "Project Background" and "Objectives".
-  5. **HARD GATE**: AI MUST wait for explicit user confirmation (e.g., "Phase Complete") before proceeding to features.
+- **Goal**: Establish background and storage strategy.
+- **Action**: Check for `Global_Context.md`. Distill Project Background, Objectives, and Initial Assumptions.
+- **Confirmation Gate**: Wait for user confirmation before moving to discovery.
 
 ## Stage 1: Idea Discovery
-- **Goal**: Understand core requirements while strictly avoiding logic deep-dives.
-- **Action**: Ask 3-5 strategic questions. Keep this phase at the "Discovery" level to prevent context pollution.
-- **Confirmation**: Finalize the conceptual background. Wait for explicit "Phase Complete" from user.
+- **Goal**: Clarify core requirements without logic deep-dives.
+- **Action**: Ask strategic questions. Establish the physical `Decision Log` & `Open Questions` list in the draft.
+- **Confirmation Gate**: Wait for user to confirm the conceptual baseline.
+
+## Optional Stage 1.5: Knowledge Scan
+Use this optional step when the domain is unfamiliar, market behavior matters, or the user asks for brainstorming / competitor research.
+- **Goal**: Use AI knowledge to reduce product blind spots before scope is finalized.
+- **Action**: Research/brainstorm (competitors, UX patterns, technical constraints, edge cases) ONLY within the current product focus.
+- **Output Format**: You MUST summarize findings using this exact format to prevent context pollution:
+  ```markdown
+  ### Knowledge Scan Summary
+  **Findings**: [Facts/Research]
+  **Product Implications**: [Impact on our PRD]
+  **Options**: [Option A, Option B]
+  **Open Questions**: [...]
+  **Recommended Direction**: [...]
+  ```
+- **Confirmation Gate**: Do not move to the next stage until the user confirms which findings/options should be adopted.
 
 ## Stage 2: Scope & Priority
-- **Goal**: Define product boundaries and engineering priorities.
-- **Action**: List features categorized by P0 (Must-have), P1 (Should-have), and P2 (Nice-to-have).
-- **Confirmation**: Finalize the feature list and priorities. Wait for explicit "Phase Complete" from user.
+- **Goal**: Define boundaries (P0/P1/P2).
+- **Action**: List features and cross-system dependencies.
+- **Confirmation Gate**: Wait for user to approve the scope.
 
 ## Stage 3: Logic Flow & Detailed Design
-- **Goal**: Refine core paths and functional logic with professional terminology.
-- **Action**: 
-  1. **Logic Mapping**: Describe business processes using engineering-standard terms.
-  2. **Sensible Baselines**: When proposing technical latencies, use sensible industry baselines (e.g., UI response < 100ms, Agent initiation 3~4s). Think critically instead of using unrealistic values.
-  3. **Controlled Brainstorming (Sub-phase)**: For P0/P1 features, offer a deep dive into **Triggers**, **Multi-modal Details**, and **Edge Cases**. Focus ONLY on the current feature to maintain context purity.
-  4. **Visual Confirmation**: Propose Mermaid diagrams for complex journeys.
-- **Confirmation**: Ensure logic closure. Wait for explicit "Phase Complete" for the entire detailed design phase.
+- **Goal**: Refine core paths, edge cases, and functional logic.
+- **Action**: Map business logic. Update the `Decision Log` with rejected options and confirmed paths. Propose Mermaid diagrams for complex flows.
+- **Confirmation Gate**: Wait for logic closure for the current feature/focus.
+### Focus Lock
+During detailed design, the AI must stay on the current feature or flow until it is confirmed as complete.
+If the current feature still has open questions, unresolved logic, or incomplete PRD fields, do not ask whether to move to the next feature or stage.
+Ask only focused questions about the current feature.
 
-## Stage 4: Naming & Final Generation
-- **Goal**: Confirm metadata and output standardized documentation.
-- **Action**: 
-  1. **Naming Suggestion**: Propose a professional filename (e.g., `PRD_[ProjectName]_V1.md`). 
-  2. **File Generation**: Populated the official `PRD Template.md` in **English**. **MANDATORY**: Carry forward all previously approved Mermaid diagrams.
-  3. **Local Save**: Save ONLY to the workspace directory.
-  4. **Justified Template Deviation**: While strict format fidelity is the default, if a deviation (e.g., adding a custom `Architecture & Common Logic` section) significantly improves readability for a specific project, the AI MUST suggest this deviation to the user before generating the file.
-- **Completion**: Provide local file paths.
+## Stage 4: File Generation
+- **Goal**: Output standardized, Global English documentation.
+- **Action**: Populate `PRD Template.md`. Apply Global English rules. Carry forward visualizations and the Decision Log. Save to workspace with a professional filename.
 
-## Special Scenarios: Agile Workflow for Complex PRDs
-For PRDs containing multiple large features (e.g., 5+ use cases), adopt an **Agile Iteration** workflow:
-1. **Skeleton First**: Establish the document skeleton and shared architecture/non-functional requirements first.
-2. **Feature Iteration**: For EACH major feature, iterate through Stages 1-3 (Discovery -> Scope -> Logic) and then write that specific feature's Stage 4 content into the file.
-3. **Loop**: Repeat for the next feature only after the previous one is "Phase Complete".
-4. **Final Polish**: Perform a final pass for consistency once all features are added.
-
-## Execution Rules
-- **[Workflow Status] Checklist**: Every response must include a status update (e.g., `[v] Stage 0 [>] Stage 1 [ ] Stage 2`).
-- **Zero-Tolerance for Auto-Pilot**: Never move to the next stage or propose next steps until the current phase is explicitly confirmed as "Phase Complete" by the user.
-- **Visual Component Persistence**: Ensure all approved Mermaid diagrams are included in the final output and all subsequent revisions.
-- **Terminology**: Use professional, clear, engineering-standard terminology at all times.
-- **Passive Execution**: Operate as a reactive engine; wait for user signal before advancing to any new feature or stage.
+## Agile Iteration for Complex PRDs
+Use when the PRD involves many features, cross-system dependencies, shared architecture, complex edge cases, or multiple user flows.
+1. **Skeleton First**: Establish the document skeleton, shared architecture, and non-functional requirements.
+2. **Iterate by Feature**: For EACH major feature, run through Stages 1-3. Write that feature's content into the file.
+3. **Loop**: Repeat for the next feature after the previous one is confirmed. Update the `[Focus: Feature Name]` in your status anchor.

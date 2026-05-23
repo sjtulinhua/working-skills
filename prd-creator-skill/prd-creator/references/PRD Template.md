@@ -70,3 +70,15 @@ Systems or internal teams this project relies on.
 
 ## **External Dependencies**
 Third-party APIs, vendor services, or external platforms.
+
+# **Decision Log & Open Questions**
+
+## **Confirmed Decisions**
+| ID | Decision | Reason | Date |
+| :--- | :--- | :--- | :--- |
+| D1 | ... | ... | ... |
+
+## **Open Questions**
+| ID | Question | Owner | Status |
+| :--- | :--- | :--- | :--- |
+| Q1 | ... | ... | Open |
