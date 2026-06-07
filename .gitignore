@@ -1,3 +1,11 @@
 node_modules/
 *.tmp
 .gemini/
+
+# Auxiliary tracking and planning files
+findings.md
+progress.md
+task_plan.md
+Skill_Iteration_Backlog.md
+Skill_Iteration_Backlog_Phase2.md
+tests/
