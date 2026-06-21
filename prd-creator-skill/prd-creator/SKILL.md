@@ -11,11 +11,26 @@ Help create, review, and polish Product Requirement Documents using the company 
 ## Working Modes
 Identify the task mode before acting. Infer the mode when clear. Ask only when the request is ambiguous or the output scope may affect the result.
 
-1. **Full PRD Creation**: Follow `references/workflow.md`. Start responses with: `[Mode: Full PRD | Stage: X | Focus: Feature / Topic Name]`
+1. **Full PRD Creation**: Follow the step-by-step workflow below. Start responses with: `[Mode: Full PRD | Stage: X | Focus: Feature / Topic Name]`
 2. **PRD Review**: Review structure, logic, gaps, risks, terminology, and testability. Do not rewrite the full PRD unless asked.
 3. **Section Rewrite**: Improve only the provided section. Preserve approved meaning and decisions.
 4. **Global English Polish**: Simplify language only. Do not change product logic.
 5. **Diagram / Flow Update**: Create or update Mermaid diagrams only.
+
+## Step-by-Step Workflow (Full PRD Creation)
+1. **Alignment**: Ask clarifying questions about core features, goals, and constraints. Do not generate PRD text yet.
+2. **Outline**: Propose the PRD structure based on the template. Wait for approval. `🔴 CHECKPOINT`
+3. **Drafting**: Draft the PRD section by section. Stay on the current focus. Ask for confirmation before moving to the next feature. `🔴 CHECKPOINT`
+4. **Review & Polish**: Apply Global English rules and check against structural rules.
+5. **Finalization**: Ask for filename confirmation before saving the final PRD. `🔴 CHECKPOINT`
+
+## Failure Recovery & Fallback
+If the user encounters an issue or the process breaks, follow this matrix:
+| Trigger Condition | Primary Action | Fallback (If Primary Fails) |
+| --- | --- | --- |
+| User gives vague requirements | Ask 2-3 specific, structured questions. | Propose a baseline assumption and ask for a simple Yes/No. |
+| User rejects drafted section | Ask what specifically went wrong (logic, tone, format). | Revert to previous approved state and rewrite one paragraph at a time. |
+| Missing template/references | Remind the user of the expected structure. | Use a generic standard PRD outline. |
 
 ## Knowledge Augmentation
 Use AI knowledge and available tools (e.g., web search) to reduce product blind spots. Run a focused Knowledge Scan when the domain is unfamiliar, involves competitors/standards, or when the user explicitly asks for research.
