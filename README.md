@@ -1,5 +1,7 @@
 # PRD Creator Skill for Gemini CLI
 
+> 维护位置已迁至 `D:\VibeCoding\My working skills\skills\prd-creator\`。本仓库保留原项目及 Git 历史；下文的旧安装和修改说明仅供历史参考。请在正式维护位置修改 Skill。
+
 A professional Gemini CLI agent skill designed to help you create, review, and polish high-quality Product Requirement Documents (PRDs) following industry standards.
 
 This skill transforms your Gemini CLI into a **Senior Product Partner**. It doesn't just write text; it asks clarifying questions, points out logical gaps, suggests structure, and enforces a rigorous step-by-step workflow.
